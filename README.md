@@ -4,7 +4,7 @@ A quine (program that outputs its own source code) in [BF](https://en.wikipedia.
 
 ## Building
 
-Use `make`. Requires `ghc`, `cat`, `rm`, `sed`.
+Use `make`. Requires `ghc`, `cat`, `rm`, `tr`.
 
 ## Structure
 
