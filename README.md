@@ -2,7 +2,7 @@
 
 A quine (program that outputs its own source code) in [BF](https://en.wikipedia.org/wiki/Brainfuck).
 
-The goal is to make the quine as short as possible. It is currently at length 2003 characters.
+The goal is to make the quine as short as possible. It is currently at length 1855 characters.
 
 ## Building
 
@@ -10,26 +10,24 @@ Use `make`. Requires `ghc`, `cat`, `rm`, `tr`.
 
 ## Structure
 
-The quine runs in 5 steps
+The quine runs in 4 steps
 
 1. Build sequence
 2. Return to start
 3. Output code to build sequence
-4. Return to start
-5. Output sequence
+4. Output sequence
 
-The "sequence" is an encoding of the code to do steps 2-5. Thus, step 3 outputs the code for step 1, and step 5 outputs the code to do steps 2-5.
+The "sequence" is an encoding of the code to do steps 2-4. Thus, step 3 outputs the code for step 1, and step 4 outputs the code to do steps 2-4.
 
-Code, in ascii, is made of characters that are in decimal 43, 45, 46, 60, 62, 91, 93.
+BF code, in ascii, is made of characters that are in decimal 43, 45, 46, 60, 62, 91, 93.
 
-The sequence is stored as a consecutive run of bytes. 42 is subtracted from each byte, to make it easier to build.
+The sequence is stored as a consecutive run of bytes. 42 is subtracted from each byte, to make it easier to build. The sequence is stored in reverse to make doing step 3 then step 4 easier without having to return to the start of the sequence.
 
 ### Code to Build Sequence
 
 To build a byte k, move right, then increment from zero k times.
 
 Increment is `+` which is decimal 43. Move right is `>` which is decimal 62.
-
 
 ## Files
 

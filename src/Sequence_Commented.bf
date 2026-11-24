@@ -5,6 +5,7 @@ Output code to build sequence
 Start pointing at start of sequence
 [
 	Looking at cell in sequence which is k
+	3 spots to the left are all 0
 	Move to spots 2 and 3 left of old cell
 	[-<<+<+>>>]
 	Looking at old cell which is 0
@@ -30,20 +31,18 @@ Start pointing at start of sequence
 	Looking at next cell in sequence
 ]
 End pointing at position four after end of sequence
-
-Return to start of sequence
-<<<<[<]>
+<<<<
 
 Output sequence
-Start pointing at start of sequence
+Start pointing at end of sequence
 [
 	Looking at cell in sequence which is k
 	Add 42 to cell
-	<+++++++[->++++++<]>
+	>+++++++[-<++++++>]<
 	Output cell
 	.
 	Clear cell
 	[-]
-	Move to next cell
-	>
+	Move to prev cell
+	<
 ]
