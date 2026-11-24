@@ -16,15 +16,18 @@ The quine runs in 5 steps
 4. Return to start
 5. Output sequence
 
-The "sequence" is the code to do steps 2-5. Thus, step 3 outputs the code for step 1, and step 5 outputs the code to do steps 2-5.
+The "sequence" is an encoding of the code to do steps 2-5. Thus, step 3 outputs the code for step 1, and step 5 outputs the code to do steps 2-5.
 
-The sequence is stored in every second position, to give room in the other positions for storing other data.
+Code, in ascii, is made of characters that are in decimal 43, 45, 46, 60, 62, 91, 93.
+
+The sequence is stored in every second position, to give room in the other positions for storing other data. 42 is subtracted from each byte, to make it easier to build.
 
 ### Code to Build Sequence
 
 To build a byte k increment from zero k times, then move right twice.
 
 Increment is `+` which is decimal 43. Move right is `>` which is decimal 62.
+
 
 ## Files
 

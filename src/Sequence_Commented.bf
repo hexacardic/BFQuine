@@ -34,5 +34,13 @@ Return to start of sequence
 <<[<<]>>
 
 Output sequence
-
-[.>>]
+Start pointing at start of sequence
+[
+	Looking at cell in sequence which is k
+	Add 42 to cell
+	<+++++++[->++++++<]>
+	Outout cell
+	.
+	Move to next cell
+	>>
+]
