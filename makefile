@@ -1,15 +1,17 @@
-main.bf: Sequence.bf Build_Sequence.bf
-	cat Build_Sequence.bf Sequence.bf > main.bf
+Quine.bf: build/Sequence.bf build/Build_Sequence.bf
+	cat build/Build_Sequence.bf build/Sequence.bf > Quine.bf
 
-Build_Sequence.bf: Build Sequence.bf
-	./Build < Sequence.bf > Build_Sequence.bf
+build/Build_Sequence.bf: build/Build build/Sequence.bf
+	./build/Build < build/Sequence.bf > build/Build_Sequence.bf
 
-Build: Build.hs
-	ghc Build.hs
+build/Build: src/Build.hs
+	mkdir -p build
+	ghc src/Build.hs -o build/Build -odir build -hidir build
 
-Sequence.bf: Sequence_Commented.bf
-	tr -cd "[].,<>+-" < Sequence_Commented.bf > Sequence.bf
+build/Sequence.bf: src/Sequence_Commented.bf
+	mkdir -p build
+	tr -cd "[].,<>+-" < src/Sequence_Commented.bf > build/Sequence.bf
 
 .PHONY: clean
 clean:
-	rm -f main.bf Sequence.bf Build_Sequence.bf Build Build.hi Build.o
+	rm -rf Quine.bf build

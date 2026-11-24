@@ -8,28 +8,32 @@ Use `make`. Requires `ghc`, `cat`, `rm`, `tr`.
 
 ## Structure
 
+The quine runs in 5 steps
+
 1. Build sequence
-2. Return to start and output code to build sequence
-3. Return to start and output sequence
+2. Return to start
+3. Output code to build sequence
+4. Return to start
+5. Output sequence
 
-Sequence = Code to do steps 2 and 3
+The "sequence" is the code to do steps 2-5. Thus, step 3 outputs the code for step 1, and step 5 outputs the code to do steps 2-5.
 
-Sequence stored in every second position
+The sequence is stored in every second position, to give room in the other positions for storing other data.
 
 ### Code to Build Sequence
 
 To build a byte k increment from zero k times, then move right twice.
 
-Increment is decimal 43, move right is decimal 62.
+Increment is `+` which is decimal 43. Move right `>` which is decimal 62.
 
 ## Files
 
-`Sequence_Commented.bf` is the code to do steps 2 and 3 with spacing, indentation, and comments to explain roughly what it is doing.
+`src/Sequence_Commented.bf` is the code to do steps 2-5 with spacing, indentation, and comments to explain roughly what it is doing.
 
-`Sequence.bf` is a minified version of `Sequence_Commented.bf`.
+`build/Sequence.bf` is a minified version of `src/Sequence_Commented.bf`.
 
-`Build_Sequence.bf` is the code to do step 1.
+`build/Build_Sequence.bf` is the code to do step 1.
 
-`Build` is built from `Build.hs`, which is the code to convert `Sequence.bf` into `Build_Sequence.bf`.
+`build/Build` is built from `src/Build.hs`, which is the code to convert `build/Sequence.bf` into `build/Build_Sequence.bf`.
 
-`main.bf` is the completed quine.
+`Quine.bf` is the completed quine.
