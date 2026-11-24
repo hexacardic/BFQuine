@@ -1,37 +1,38 @@
 Return to start of sequence
-<<[<<]>>
+[<]>
 
 Output code to build sequence
 Start pointing at start of sequence
 [
 	Looking at cell in sequence which is k
-	Copy to next spot
-	[->+<<+>]<[->+<]
-	Looking at prev spot which is 0
-	Set up 43 in prev spot
-	<<++++++[->>+++++++<<]>>+
-	Looking at prev spot which is 43
-	>>
-	Looking at next spot which is k
-	Output prev spot which is 43 k times
-	[-<<.>>]
-	Looking at next spot which is 0
-	Add 19 to prev spot
-	++++[-<<+++++>>]<<-
-	Looking at prev spot which is 62
-	Output twice
-	..
-	Looking at prev spot which is 62
+	Move to spots 2 and 3 left of old cell
+	[-<<+<+>>>]
+	Looking at old cell which is 0
+	Set up 62 in spot 1 left
+	+++++++[-<+++++++++>]<-
+	Looking at spot 1 left which is 62
+	Output
+	.
+	Subtract 19 from spot 1 left
+	>+++++[-<---->]<+
+	Looking at spot 1 left which is 43
+	<
+	Looking at spot 2 left which is k
+	Output spot 1 left which is 43 k times
+	[->.<]
+	Looking at spot 2 left which is 0
+	Move to spot 1 left
+	>
 	Reset to 0
 	[-]
-	Looking at prev spot
-	>>>
+	Looking at spot 1 left
+	>>
 	Looking at next cell in sequence
 ]
-End pointing at position two after end of sequence
+End pointing at position four after end of sequence
 
 Return to start of sequence
-<<[<<]>>
+<<<<[<]>
 
 Output sequence
 Start pointing at start of sequence
@@ -39,8 +40,10 @@ Start pointing at start of sequence
 	Looking at cell in sequence which is k
 	Add 42 to cell
 	<+++++++[->++++++<]>
-	Outout cell
+	Output cell
 	.
+	Clear cell
+	[-]
 	Move to next cell
-	>>
+	>
 ]
