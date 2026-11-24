@@ -31,12 +31,12 @@ Increment is `+` which is decimal 43. Move right is `>` which is decimal 62.
 
 ## Files
 
-`src/Sequence_Commented.bf` is the code to do steps 2-5 with spacing, indentation, and comments to explain roughly what it is doing.
+`src/Main.bf` is the code to do steps 2-4 with spacing, indentation, and comments to explain roughly what it is doing.
 
-`build/Sequence.bf` is a minified version of `src/Sequence_Commented.bf`.
+`build/Main.bf` is a minified version of `src/Main.bf`.
 
-`build/Build_Sequence.bf` is the code to do step 1.
+`build/Set.bf` is the code to do step 1.
 
-`build/Build` is built from `src/Build.hs`, which is the code to convert `build/Sequence.bf` into `build/Build_Sequence.bf`.
+`build/Build` is built from `src/Build.hs`, which is the code to convert `build/Main.bf` into `build/Set.bf`.
 
 `Quine.bf` is the completed quine.
