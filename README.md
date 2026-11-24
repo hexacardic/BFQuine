@@ -24,7 +24,7 @@ The sequence is stored in every second position, to give room in the other posit
 
 To build a byte k increment from zero k times, then move right twice.
 
-Increment is `+` which is decimal 43. Move right `>` which is decimal 62.
+Increment is `+` which is decimal 43. Move right is `>` which is decimal 62.
 
 ## Files
 
