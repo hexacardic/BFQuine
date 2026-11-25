@@ -1,12 +1,13 @@
-Return to start of sequence
+Start pointing at left end of sequence
+Return to right end of sequence
 [>]<
 
 Output code to build sequence
-Start pointing at start of sequence
+Start pointing at right end of sequence
 [
 	Looking at cell in sequence which is negative k
 	3 spots to the right are all 0
-	Move to spots 2 and 3 left of old cell
+	Move to spots 2 and 3 right of old cell
 	[->>+>+<<<]
 	Looking at old cell which is 0
 	Set up 60 in spot 1 right
