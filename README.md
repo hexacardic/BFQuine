@@ -2,7 +2,7 @@
 
 A quine (program that outputs its own source code) in [BF](https://en.wikipedia.org/wiki/Brainfuck).
 
-The goal is to make the quine as short as possible. It is currently at length 921 characters.
+The goal is to make the quine as short as possible. It is currently at length 918 characters.
 
 ## Building
 

@@ -25,7 +25,7 @@ Start pointing at start of sequence
 	Move to spot 1 left
 	>
 	Reset to 0
-	[-]
+	[+]
 	Looking at spot 1 left
 	>>
 	Looking at next cell in sequence
@@ -59,7 +59,7 @@ Start pointing at end of sequence
 					If cell is more than 5
 					-[
 						Add 29 to position 1 right
-						>>+++++[-<++++++>]<-<
+						>>++++[-<+++++++>]<+<
 						If cell is more than 6
 						-[
 							Add 2 to position 1 right
@@ -73,7 +73,7 @@ Start pointing at end of sequence
 		]
 	]
 	Output position 1 right and reset
-	>.[-]<
+	>.[+]<
 	Move to next cell on left
 	<
 ]
