@@ -2,7 +2,7 @@
 
 A quine (program that outputs its own source code) in [BF](https://en.wikipedia.org/wiki/Brainfuck).
 
-The goal is to make the quine as short as possible. It is currently at length 918 characters.
+The goal is to make the quine as short as possible. It is currently at length 903 characters.
 
 ## Building
 
@@ -17,29 +17,25 @@ Use `make`. Requires `ghc`, `cat`, `rm`, `tr`.
 The quine runs in 4 steps
 
 1. Build sequence
-2. Return to start
+2. Move to other end of sequence
 3. Output code to build sequence
 4. Output decoded sequence
 
 The "sequence" is an encoding of the code to do steps 2-4. Thus, step 3 outputs the code for step 1, and step 4 outputs the code to do steps 2-4.
 
-The sequence is stored as a consecutive run of bytes in reverse, to make doing step 3 then step 4 easier without having to return to the start of the sequence. Each byte is stored with a small number to make building the sequence shorter. Instructions that more commonly occur in the sequence should be assigned smaller encodings to make building the sequence shorter, so frequency of instructions in the sequence is show below.
+The sequence is stored as a consecutive run of bytes and built in reverse, to make doing step 3 then step 4 easier without having to return to the start of the sequence. Each instruction is stored with a small number to make building the sequence shorter. By using negative numbers and building in reverse, step 3 mainly has to write `-` and `<` which are easier to compute, and the sequence itself contains more `+` commands which are smaller to build. Instructions that more commonly occur in the sequence could be assigned smaller encodings to make building the sequence shorter, so frequency of instructions in the sequence is shown below.
 
 Instruction | Character | Decimal | Encoding | Frequency
 ------------|-----------|---------|----------|----------
-Increment   | `+`       | 43      | 1        | 73
-Decrement   | `-`       | 45      | 2        | 18
-Output      | `.`       | 46      | 3        | 3
-Move Left   | `<`       | 60      | 4        | 27
-Move Right  | `>`       | 62      | 5        | 23
-While       | `[`       | 91      | 6        | 17
-End While   | `]`       | 93      | 7        | 17
+Increment   | `+`       | 43      | -1       | 80
+Decrement   | `-`       | 45      | -2       | 8
+Output      | `.`       | 46      | -3       | 3
+Move Left   | `<`       | 60      | -4       | 23
+Move Right  | `>`       | 62      | -5       | 27
+While       | `[`       | 91      | -6       | 17
+End While   | `]`       | 93      | -7       | 17
 
-### Code to Build Sequence
-
-To build a byte k, move right, then increment from zero k times.
-
-Increment is `+` which is decimal 43. Move right is `>` which is decimal 62.
+To build a byte k, move left, then decrement from zero k times.
 
 ## Files
 
