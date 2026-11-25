@@ -37,12 +37,43 @@ Output sequence
 Start pointing at end of sequence
 [
 	Looking at cell in sequence which is k
-	Add 42 to cell
-	>+++++++[-<++++++>]<
-	Output cell
-	.
-	Clear cell
-	[-]
-	Move to prev cell
+	All positions to right are empty
+	Add 43 to position 1 right
+	>>+++++++[-<++++++>]<+<
+	If cell is more than 1
+	-[
+		Add 2 to position 1 right
+		>++<
+		If cell is more than 2
+		-[
+			Add 1 to position 1 right
+			>+<
+			If cell is more than 3
+			-[
+				Add 14 to position 1 right
+				>++++++++++++++<
+				If cell is more than 4
+				-[
+					Add 2 to position 1 right
+					>++<
+					If cell is more than 5
+					-[
+						Add 29 to position 1 right
+						>>+++++[-<++++++>]<-<
+						If cell is more than 6
+						-[
+							Add 2 to position 1 right
+							>++<
+							End if
+							-
+						]
+					]
+				]
+			]
+		]
+	]
+	Output position 1 right and reset
+	>.[-]<
+	Move to next cell on left
 	<
 ]
