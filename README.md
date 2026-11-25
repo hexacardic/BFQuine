@@ -8,6 +8,10 @@ The goal is to make the quine as short as possible. It is currently at length 91
 
 Use `make`. Requires `ghc`, `cat`, `rm`, `tr`.
 
+`make clean` can be used to remove all generated files.
+
+`make analyse` can be used to analyse the frequency of instructions in the code which is loaded by the program.
+
 ## Structure
 
 The quine runs in 4 steps
@@ -19,17 +23,17 @@ The quine runs in 4 steps
 
 The "sequence" is an encoding of the code to do steps 2-4. Thus, step 3 outputs the code for step 1, and step 4 outputs the code to do steps 2-4.
 
-The sequence is stored as a consecutive run of bytes in reverse, to make doing step 3 then step 4 easier without having to return to the start of the sequence. Each byte is stored with a small number to make building the sequence shorter.
+The sequence is stored as a consecutive run of bytes in reverse, to make doing step 3 then step 4 easier without having to return to the start of the sequence. Each byte is stored with a small number to make building the sequence shorter. Instructions that more commonly occur in the sequence should be assigned smaller encodings to make building the sequence shorter, so frequency of instructions in the sequence is show below.
 
-Instruction | Character | Decimal | Encoding
-------------|-----------|---------|---------
-Increment   | `+`       | 43      | 1
-Decrement   | `-`       | 45      | 2
-Output      | `.`       | 46      | 3
-Move Left   | `<`       | 60      | 4
-Move Right  | `>`       | 62      | 5
-While       | `[`       | 91      | 6
-End While   | `]`       | 93      | 7
+Instruction | Character | Decimal | Encoding | Frequency
+------------|-----------|---------|----------|----------
+Increment   | `+`       | 43      | 1        | 73
+Decrement   | `-`       | 45      | 2        | 18
+Output      | `.`       | 46      | 3        | 3
+Move Left   | `<`       | 60      | 4        | 27
+Move Right  | `>`       | 62      | 5        | 23
+While       | `[`       | 91      | 6        | 17
+End While   | `]`       | 93      | 7        | 17
 
 ### Code to Build Sequence
 
@@ -48,3 +52,5 @@ Increment is `+` which is decimal 43. Move right is `>` which is decimal 62.
 `build/Build` is built from `src/Build.hs`, which is the code to convert `build/Main.bf` into `build/Set.bf`.
 
 `Quine.bf` is the completed quine.
+
+`build/Analyse` is built from `src/Analyse.hs`, which is the code to get a frequency analysis of the characters in `build/Main.bf`.

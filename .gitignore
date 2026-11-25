@@ -1,3 +1,2 @@
+build/Analyse
 build/Build
-build/*.hi
-build/*.o
