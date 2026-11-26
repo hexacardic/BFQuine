@@ -2,7 +2,7 @@
 
 A quine (program that outputs its own source code) in [BF](https://en.wikipedia.org/wiki/Brainfuck).
 
-The goal is to make the quine as short as possible. It is currently at length 903 characters.
+The goal is to make the quine as short as possible. It is currently at length 841 characters.
 
 ## Building
 
@@ -27,13 +27,13 @@ The sequence is stored as a consecutive run of bytes and built in reverse, to ma
 
 Instruction | Character | Decimal | Encoding | Frequency
 ------------|-----------|---------|----------|----------
-Increment   | `+`       | 43      | -1       | 80
+Increment   | `+`       | 43      | -1       | 76
 Decrement   | `-`       | 45      | -2       | 8
 Output      | `.`       | 46      | -3       | 3
-Move Left   | `<`       | 60      | -4       | 23
-Move Right  | `>`       | 62      | -5       | 27
-While       | `[`       | 91      | -6       | 17
-End While   | `]`       | 93      | -7       | 17
+Move Left   | `<`       | 60      | -4       | 21
+Move Right  | `>`       | 62      | -5       | 24
+While       | `[`       | 91      | -6       | 16
+End While   | `]`       | 93      | -7       | 16
 
 To build a byte k, move left, then decrement from zero k times.
 

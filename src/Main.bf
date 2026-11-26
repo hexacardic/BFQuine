@@ -6,33 +6,27 @@ Output code to build sequence
 Start pointing at right end of sequence
 [
 	Looking at cell in sequence which is negative k
-	3 spots to the right are all 0
-	Move to spots 2 and 3 right of old cell
-	[->>+>+<<<]
-	Looking at old cell which is 0
-	Set up 60 in spot 1 right
-	++++++[->++++++++++<]>
-	Looking at spot 1 right which is 60
+	2 spots to the right are all 0
+	Set up 60 in spot 2 right
+	>++++++[->++++++++++<]>
+	Looking at spot 2 right which is 60
 	Output
 	.
-	Subtract 15 from spot 1 right
-	<+++++[->---<]>
+	Multiply by 3 over 4 and move to spot 1 right
+	[----<+++>]<
 	Looking at spot 1 right which is 45
-	>
-	Looking at spot 2 right which is negative k
-	Output spot 1 right which is 45 k times
-	[+<.>]
-	Looking at spot 2 right which is 0
-	Move to spot 1 right
 	<
-	Reset to 0
-	[+]
-	Looking at spot 1 right
-	<<
-	Looking at next cell in sequence
+	Looking at cell in sequence which is negative k
+	Move 2 right and output 45 k times
+	[+>.>-<<]
+	Reset spot 1 right
+	>[+]<
+	Looking at old cell
+	Move to next cell in sequence
+	<
 ]
-End pointing at position four left of end of sequence
->>>>
+End pointing at position three left of end of sequence
+>>>
 
 Output sequence
 Start pointing at left end of sequence
